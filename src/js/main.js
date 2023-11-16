@@ -18,7 +18,7 @@ tl.to(".slider-track", {
     end: "+=300%",
     pin: true,
     scrub: true,
-    // markers: true,
+    markers: true,
     onComplete: () => {
       // blockScroll.classList.add("slider-mask-2-hidden");
     },
@@ -38,7 +38,7 @@ slider1Button.addEventListener("click", function () {
       end: "+=300%",
       pin: true,
       scrub: true,
-      // markers: true,
+      markers: true,
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
@@ -56,7 +56,7 @@ slider2Button.addEventListener("click", function () {
       end: "+=300%",
       pin: true,
       scrub: true,
-      // markers: true,
+      markers: true,
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
@@ -67,4 +67,58 @@ var slider3Button = document.querySelector("#slider-3-button");
 
 slider3Button.addEventListener("click", function () {
   document.querySelector(".shop").classList.remove("hidden");
+});
+
+gsap.from(".img", {
+  scrollTrigger: {
+    trigger: ".img",
+    start: "top top",
+  },
+  x: "50px",
+  duration: 0.5,
+  opacity: 0,
+});
+
+gsap.from(".img-1", {
+  scrollTrigger: {
+    trigger: ".img-1",
+    start: "top top",
+  },
+  x: "50px",
+  duration: 0.5,
+  opacity: 0,
+  delay: 1,
+});
+
+gsap.from(".img-2", {
+  scrollTrigger: {
+    trigger: ".img-2",
+    start: "top top",
+  },
+  x: "50px",
+  duration: 0.5,
+  opacity: 0,
+  delay: 2,
+});
+
+gsap.from(".img-3", {
+  scrollTrigger: {
+    trigger: ".img-3",
+    start: "top top",
+  },
+  x: "50px",
+  duration: 0.5,
+  opacity: 0,
+  delay: 3,
+});
+
+gsap.from(".img-4", {
+  scrollTrigger: {
+    trigger: ".img-4",
+    start: "top top",
+  },
+  x: "50px",
+  duration: 0.5,
+  opacity: 0,
+  delay: 4,
 });
