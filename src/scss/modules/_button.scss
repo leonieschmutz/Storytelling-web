@@ -1,4 +1,8 @@
 .button {
-  background-color: aquamarine;
-  size: 16px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
 }

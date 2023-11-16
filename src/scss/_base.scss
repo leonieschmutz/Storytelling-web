@@ -3,11 +3,18 @@
 // ==================================== */
 
 :root {
+  --burgundy: #44292c;
 }
 
 /* ====================================
 // reset rules
 // ==================================== */
+
+@font-face {
+  font-family: "Bloomer";
+  src: url("../fonts/BloomerDEMO-Regular.woff2") format("woff2"),
+    url("../fonts/BloomerDEMO-Regular.woff") format("woff");
+}
 
 * {
   box-sizing: border-box;
@@ -49,23 +56,11 @@ header {
   height: 100vh;
 }
 
-.img-2 {
-  height: 60%;
-  width: 45%;
-  background-color: rgb(227, 158, 236);
-  border: 2px solid white;
-  position: absolute;
-  left: 10%;
-  top: 8%;
-}
-.img-3 {
-  height: 70%;
-  width: 30%;
-  background-color: rgb(227, 158, 236);
-  border: 2px solid white;
-  position: absolute;
-  right: 20%;
-  top: 25%;
+h3 {
+  font-family: "Bloomer";
+  size: 24px;
+  margin-top: 10px;
+  color: var(--burgundy);
 }
 
 h1,

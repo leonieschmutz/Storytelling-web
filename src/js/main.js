@@ -18,7 +18,7 @@ tl.to(".slider-track", {
     end: "+=300%",
     pin: true,
     scrub: true,
-    markers: true,
+    // markers: true,
     onComplete: () => {
       // blockScroll.classList.add("slider-mask-2-hidden");
     },
@@ -38,7 +38,7 @@ slider1Button.addEventListener("click", function () {
       end: "+=300%",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
@@ -56,9 +56,15 @@ slider2Button.addEventListener("click", function () {
       end: "+=300%",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
   });
+});
+
+var slider3Button = document.querySelector("#slider-3-button");
+
+slider3Button.addEventListener("click", function () {
+  document.querySelector(".shop").classList.remove("hidden");
 });
