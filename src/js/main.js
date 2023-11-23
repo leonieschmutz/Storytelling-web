@@ -26,7 +26,7 @@ tl.to(".slider-track", {
     end: "+=300%",
     pin: true,
     scrub: true,
-    markers: true,
+    // markers: true,
     onUpdate: function (self) {
       document.querySelector(".progress-bar").style.transform =
         "scaleX(" + self.progress + ")";
@@ -57,7 +57,7 @@ slider1Button.addEventListener("click", function (e) {
       end: "+=300%",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
       onUpdate: function (self) {
         document.querySelector(".progress-bar-2").style.transform =
           "scaleX(" + self.progress + ")";
@@ -93,7 +93,7 @@ slider2Button.addEventListener("click", function (e) {
       end: "+=300%",
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
       onUpdate: function (self) {
         document.querySelector(".progress-bar-3").style.transform =
           "scaleX(" + self.progress + ")";
