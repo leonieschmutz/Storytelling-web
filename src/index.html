@@ -5,6 +5,10 @@
     <title>eikon parcel starter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/main.scss" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="l-page">
     <header>
@@ -75,7 +79,7 @@
               src="img/07-diner-4.png?as=webp"
               alt="La famille à table"
             />
-            <div class="button hidden" id="slider-1-button">
+            <a href="#chapter-2" class="button hidden" id="slider-1-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="83"
@@ -87,7 +91,7 @@
                 <circle cx="41.5" cy="41.5" r="41" stroke="#44292C" />
               </svg>
               <h3>aller au club</h3>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -97,7 +101,7 @@
           <div class="progress-bar-2"></div>
           <div class="progress-track"></div>
         </div>
-        <div class="l-img-music">
+        <div class="l-img-music" id="chapter-2">
           <img
             src="img/tourne-disque.png"
             alt="Un button qui joue ou arrête la musique quand on click dessus"
@@ -134,7 +138,7 @@
               src="img/12-cavachauffer-5.png?as=webp"
               alt="Mamadou propose à l'internaute de venir à l'hotel des milles étoiles"
             />
-            <div class="button hidden" id="slider-2-button">
+            <a href="#chapter-3" class="button hidden" id="slider-2-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="83"
@@ -146,7 +150,7 @@
                 <circle cx="41.5" cy="41.5" r="41" stroke="#44292C" />
               </svg>
               <h3>Aller à l'hôtel</h3>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -167,7 +171,8 @@
             <img
               class="l-big-img"
               src="img/13-hotel-etoiles.png?as=webp"
-              alt="L'hotel des milles étoiles'"
+              alt="L'hotel des milles étoiles"
+              id="chapter-3"
             />
           </div>
           <div class="l-chapter-part">
@@ -193,7 +198,7 @@
               src="img/17-hotel-etoiles-5.png?as=webp"
               alt="Mamadou et l'internaute qui vont vers une table"
             />
-            <div class="button hidden" id="slider-3-button">
+            <a href="#shop" class="button hidden" id="slider-3-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="83"
@@ -205,13 +210,68 @@
                 <circle cx="41.5" cy="41.5" r="41" stroke="#44292C" />
               </svg>
               <h3>Vivre l'histoire complète</h3>
-            </div>
+            </a>
           </div>
         </div>
       </div>
-      <div class="l-chapter l-shop shop hidden"></div>
+      <div class="l-shop shop hidden" id="shop">
+        <h2>Achetez dès maintenant le tome 1 d’aya de youpogon !</h2>
+        <div class="shop-content">
+          <img src="img/shop-comic.png?as=webp" alt="Une photo de la BD" />
+          <div class="shop-tome">
+            <h5>Résumé</h5>
+            <p>
+              "Aya de Yopougon" narre la vie trépidante d'Aya, une jeune femme
+              ambitieuse de 19 ans à Abidjan, Côte d'Ivoire, dans les années 70.
+              Entre danses au Secouez-vous et étreintes à l'hôtel aux mille
+              étoiles, Aya se démarque en choisissant de rester studieuse. La BD
+              explore avec humour et profondeur les aspirations, défis et
+              relations des habitants de Yopougon, offrant un regard réaliste
+              sur la vie quotidienne, la culture et l'histoire ivoiriennes. Aya,
+              avec son caractère fort et ses rêves de médecine, guide
+              l'histoire, mais d'autres personnages contribuent également à
+              cette trame riche.<br />
+              N’hésitez plus et découvrez l’aventure d’Aya en six tomes !
+            </p>
+            <div class="button-shop"><h3>Acheter la BD</h3></div>
+          </div>
+          <div class="shop-information">
+            <h5>Informations<br />générales</h5>
+            <h6>Auteurs</h6>
+            <p>Marguerite Abouet et Clément Oubrerie</p>
+            <h6>Nombre de page</h6>
+            <p>Marguerite Abouet et Clément Oubrerie</p>
+            <h6>Maison d'édition</h6>
+            <p>Gallimard</p>
+            <h6>Prix</h6>
+            <p>Prix de la révélation à Angoulême (2006)</p>
+            <h6>ISBN-13</h6>
+            <p>9782070573110</p>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer class="hidden"></footer>
+    <footer class="hidden">
+      <div class="footer-logo">
+        <img src="img/gallimard-logo.png?as=webp" alt="le logo gallimard" />
+        <p>Tous droits réservés © Gallimard 2023</p>
+      </div>
+      <div class="footer-links">
+        <a href="">Les autres tomes d’Aya</a>
+        <a href="">Trouver un point de vente</a>
+        <a href="">Conditions de vente</a>
+        <a href="">Droits d’auteur</a>
+        <a href="">A propos</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/"
+          ><img src="img/facebook.svg" alt="le logo facebook"
+        /></a>
+        <a href="https://fr-fr.facebook.com/"
+          ><img src="img/instagram.svg" alt="le logo instagram"
+        /></a>
+      </div>
+    </footer>
     <script src="js/main.js" type="module"></script>
   </body>
 </html>

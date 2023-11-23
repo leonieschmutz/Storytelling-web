@@ -1,8 +1,10 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // import { Timeline } from "gsap/gsap-core";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 const n = 3;
 var amplitudeX = (-100 * (n - 1)) / n;
@@ -45,47 +47,44 @@ tl.to(".slider-track", {
   ease: "sine.inOut",
 });
 
-slider1Button.addEventListener("click", function () {
+slider1Button.addEventListener("click", function (e) {
+  e.preventDefault(); // Annulation de l'action par défaut
   document.querySelector(".slider-mask-2").classList.remove("hidden");
-  gsap.to(".slider-track", {
-    ScrollTrigger: {
-      trigger: "body",
-      y: "-100vh",
-      duration: 2,
-    },
-  }),
-    tl.to(".slider-track-2", {
-      scrollTrigger: {
-        trigger: ".slider-mask-2",
-        start: "top top",
-        end: "+=300%",
-        pin: true,
-        scrub: true,
-        markers: true,
-        onUpdate: function (self) {
-          document.querySelector(".progress-bar-2").style.transform =
-            "scaleX(" + self.progress + ")";
-          // document.querySelector(".progress-image").style.left =
-          //   self.progress * 100 + "%";
-        },
-        onLeave: function () {
-          progressElement2.classList.add("hidden");
-          slider2Button.classList.remove("hidden");
-        },
-        onEnterBack: function () {
-          progressElement2.classList.remove("hidden");
-          slider2Button.classList.add("hidden");
-        },
-        onComplete: function () {
-          console.log("Scroll completed!");
-        },
+  tl.to(".slider-track-2", {
+    scrollTrigger: {
+      trigger: ".slider-mask-2",
+      start: "top top",
+      end: "+=300%",
+      pin: true,
+      scrub: true,
+      markers: true,
+      onUpdate: function (self) {
+        document.querySelector(".progress-bar-2").style.transform =
+          "scaleX(" + self.progress + ")";
       },
-      x: amplitudeX + "%",
-      ease: "sine.inOut",
-    });
+      onLeave: function () {
+        progressElement2.classList.add("hidden");
+        slider2Button.classList.remove("hidden");
+      },
+      onEnterBack: function () {
+        progressElement2.classList.remove("hidden");
+        slider2Button.classList.add("hidden");
+      },
+      onComplete: function () {
+        console.log("Scroll completed!");
+      },
+    },
+    x: amplitudeX + "%",
+    ease: "sine.inOut",
+  });
+  gsap.to(window, {
+    scrollTo: "#chapter-2",
+    duration: 1,
+  });
 });
 
-slider2Button.addEventListener("click", function () {
+slider2Button.addEventListener("click", function (e) {
+  e.preventDefault(); // Annulation de l'action par défaut
   document.querySelector(".slider-mask-3").classList.remove("hidden");
   tl.to(".slider-track-3", {
     scrollTrigger: {
@@ -98,8 +97,6 @@ slider2Button.addEventListener("click", function () {
       onUpdate: function (self) {
         document.querySelector(".progress-bar-3").style.transform =
           "scaleX(" + self.progress + ")";
-        // document.querySelector(".progress-image").style.left =
-        //   self.progress * 100 + "%";
       },
       onLeave: function () {
         progressElement3.classList.add("hidden");
@@ -116,10 +113,20 @@ slider2Button.addEventListener("click", function () {
     x: amplitudeX + "%",
     ease: "sine.inOut",
   });
+  gsap.to(window, {
+    scrollTo: "#chapter-3",
+    duration: 1,
+  });
 });
 
-slider3Button.addEventListener("click", function () {
+slider3Button.addEventListener("click", function (e) {
+  e.preventDefault(); // Annulation de l'action par défaut
   document.querySelector(".shop").classList.remove("hidden");
+  document.querySelector("footer").classList.remove("hidden");
+  gsap.to(window, {
+    scrollTo: "#shop",
+    duration: 1,
+  });
 });
 
 // gsap.from(".img", {

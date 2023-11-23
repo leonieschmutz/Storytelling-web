@@ -1,0 +1,27 @@
+.shop {
+  p {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+  }
+}
+
+.shop-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 130px;
+  img {
+    width: 30%;
+  }
+}
+
+.shop-tome {
+  width: 620px;
+}
+
+.shop-information {
+  width: 260px;
+}

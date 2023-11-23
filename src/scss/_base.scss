@@ -5,6 +5,7 @@
 :root {
   --burgundy: #44292c;
   --dark-aquablue: #029986;
+  --light-aquablue: #43ccc0;
 }
 
 /* ====================================
@@ -24,6 +25,7 @@
 }
 
 html {
+  // scroll-behavior: smooth;
   font-size: 16px;
 }
 
@@ -81,7 +83,15 @@ h3 {
 
 h2 {
   z-index: 2;
-  color: white;
+  color: var(--light-aquablue);
+  font-family: "Bloomer";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 90px 100px 0;
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 h4 {
@@ -90,10 +100,31 @@ h4 {
   color: var(--dark-aquablue);
 }
 
+h5 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 22px;
+}
+
+h6 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0.6;
+  color: white;
+  padding: 5px 0;
+}
+
 header {
   background-image: url(../img/header.png);
   background-size: cover;
   height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 .intro {
