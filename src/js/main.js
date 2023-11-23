@@ -10,6 +10,12 @@ var amplitudeX = (-100 * (n - 1)) / n;
 let tl = gsap.timeline({});
 
 const blockScroll = document.querySelector(".slider-mask-2");
+const progressElement = document.querySelector(".progress-1");
+const progressElement2 = document.querySelector(".progress-2");
+const progressElement3 = document.querySelector(".progress-3");
+const slider1Button = document.querySelector("#slider-1-button");
+const slider2Button = document.querySelector("#slider-2-button");
+const slider3Button = document.querySelector("#slider-3-button");
 
 tl.to(".slider-track", {
   scrollTrigger: {
@@ -19,45 +25,65 @@ tl.to(".slider-track", {
     pin: true,
     scrub: true,
     markers: true,
-    // onComplete: () => {
-    //   // blockScroll.classList.add("slider-mask-2-hidden");
-    // },
     onUpdate: function (self) {
       document.querySelector(".progress-bar").style.transform =
         "scaleX(" + self.progress + ")";
-      // document.querySelector(".progress-image").style.left =
-      //   self.progress * 100 + "%";
+    },
+    onLeave: function () {
+      progressElement.classList.add("hidden");
+      slider1Button.classList.remove("hidden");
+    },
+    onEnterBack: function () {
+      progressElement.classList.remove("hidden");
+      slider1Button.classList.add("hidden");
+    },
+    onComplete: function () {
+      console.log("Scroll completed!");
     },
   },
   x: amplitudeX + "%",
   ease: "sine.inOut",
 });
 
-var slider1Button = document.querySelector("#slider-1-button");
-
 slider1Button.addEventListener("click", function () {
   document.querySelector(".slider-mask-2").classList.remove("hidden");
-  tl.to(".slider-track-2", {
-    scrollTrigger: {
-      trigger: ".slider-mask-2",
-      start: "top top",
-      end: "+=300%",
-      pin: true,
-      scrub: true,
-      markers: true,
-      onUpdate: function (self) {
-        document.querySelector(".progress-bar-2").style.transform =
-          "scaleX(" + self.progress + ")";
-        // document.querySelector(".progress-image").style.left =
-        //   self.progress * 100 + "%";
-      },
+  gsap.to(".slider-track", {
+    ScrollTrigger: {
+      trigger: "body",
+      y: "-100vh",
+      duration: 2,
     },
-    x: amplitudeX + "%",
-    ease: "sine.inOut",
-  });
+  }),
+    tl.to(".slider-track-2", {
+      scrollTrigger: {
+        trigger: ".slider-mask-2",
+        start: "top top",
+        end: "+=300%",
+        pin: true,
+        scrub: true,
+        markers: true,
+        onUpdate: function (self) {
+          document.querySelector(".progress-bar-2").style.transform =
+            "scaleX(" + self.progress + ")";
+          // document.querySelector(".progress-image").style.left =
+          //   self.progress * 100 + "%";
+        },
+        onLeave: function () {
+          progressElement2.classList.add("hidden");
+          slider2Button.classList.remove("hidden");
+        },
+        onEnterBack: function () {
+          progressElement2.classList.remove("hidden");
+          slider2Button.classList.add("hidden");
+        },
+        onComplete: function () {
+          console.log("Scroll completed!");
+        },
+      },
+      x: amplitudeX + "%",
+      ease: "sine.inOut",
+    });
 });
-
-var slider2Button = document.querySelector("#slider-2-button");
 
 slider2Button.addEventListener("click", function () {
   document.querySelector(".slider-mask-3").classList.remove("hidden");
@@ -75,13 +101,22 @@ slider2Button.addEventListener("click", function () {
         // document.querySelector(".progress-image").style.left =
         //   self.progress * 100 + "%";
       },
+      onLeave: function () {
+        progressElement3.classList.add("hidden");
+        slider3Button.classList.remove("hidden");
+      },
+      onEnterBack: function () {
+        progressElement3.classList.remove("hidden");
+        slider3Button.classList.add("hidden");
+      },
+      onComplete: function () {
+        console.log("Scroll completed!");
+      },
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
   });
 });
-
-var slider3Button = document.querySelector("#slider-3-button");
 
 slider3Button.addEventListener("click", function () {
   document.querySelector(".shop").classList.remove("hidden");
