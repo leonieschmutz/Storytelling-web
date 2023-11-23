@@ -4,6 +4,7 @@
 
 :root {
   --burgundy: #44292c;
+  --dark-aquablue: #029986;
 }
 
 /* ====================================
@@ -69,4 +70,10 @@ h1,
 h2 {
   z-index: 2;
   color: white;
+}
+
+h4 {
+  font-family: "Bloomer";
+  font-size: 20px;
+  color: var(--dark-aquablue);
 }

@@ -19,8 +19,14 @@ tl.to(".slider-track", {
     pin: true,
     scrub: true,
     markers: true,
-    onComplete: () => {
-      // blockScroll.classList.add("slider-mask-2-hidden");
+    // onComplete: () => {
+    //   // blockScroll.classList.add("slider-mask-2-hidden");
+    // },
+    onUpdate: function (self) {
+      document.querySelector(".progress-bar").style.transform =
+        "scaleX(" + self.progress + ")";
+      // document.querySelector(".progress-image").style.left =
+      //   self.progress * 100 + "%";
     },
   },
   x: amplitudeX + "%",
@@ -39,6 +45,12 @@ slider1Button.addEventListener("click", function () {
       pin: true,
       scrub: true,
       markers: true,
+      onUpdate: function (self) {
+        document.querySelector(".progress-bar-2").style.transform =
+          "scaleX(" + self.progress + ")";
+        // document.querySelector(".progress-image").style.left =
+        //   self.progress * 100 + "%";
+      },
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
@@ -57,6 +69,12 @@ slider2Button.addEventListener("click", function () {
       pin: true,
       scrub: true,
       markers: true,
+      onUpdate: function (self) {
+        document.querySelector(".progress-bar-3").style.transform =
+          "scaleX(" + self.progress + ")";
+        // document.querySelector(".progress-image").style.left =
+        //   self.progress * 100 + "%";
+      },
     },
     x: amplitudeX + "%",
     ease: "sine.inOut",
@@ -69,56 +87,56 @@ slider3Button.addEventListener("click", function () {
   document.querySelector(".shop").classList.remove("hidden");
 });
 
-gsap.from(".img", {
-  scrollTrigger: {
-    trigger: ".img",
-    start: "top top",
-  },
-  x: "50px",
-  duration: 0.5,
-  opacity: 0,
-});
+// gsap.from(".img", {
+//   scrollTrigger: {
+//     trigger: ".img",
+//     start: "top top",
+//   },
+//   x: "50px",
+//   duration: 0.5,
+//   opacity: 0,
+// });
 
-gsap.from(".img-1", {
-  scrollTrigger: {
-    trigger: ".img-1",
-    start: "top top",
-  },
-  x: "50px",
-  duration: 0.5,
-  opacity: 0,
-  delay: 1,
-});
+// gsap.from(".img-1", {
+//   scrollTrigger: {
+//     trigger: ".img-1",
+//     start: "top top",
+//   },
+//   x: "50px",
+//   duration: 0.5,
+//   opacity: 0,
+//   delay: 1,
+// });
 
-gsap.from(".img-2", {
-  scrollTrigger: {
-    trigger: ".img-2",
-    start: "top top",
-  },
-  x: "50px",
-  duration: 0.5,
-  opacity: 0,
-  delay: 2,
-});
+// gsap.from(".img-2", {
+//   scrollTrigger: {
+//     trigger: ".img-2",
+//     start: "top top",
+//   },
+//   x: "50px",
+//   duration: 0.5,
+//   opacity: 0,
+//   delay: 2,
+// });
 
-gsap.from(".img-3", {
-  scrollTrigger: {
-    trigger: ".img-3",
-    start: "top top",
-  },
-  x: "50px",
-  duration: 0.5,
-  opacity: 0,
-  delay: 3,
-});
+// gsap.from(".img-3", {
+//   scrollTrigger: {
+//     trigger: ".img-3",
+//     start: "top top",
+//   },
+//   x: "50px",
+//   duration: 0.5,
+//   opacity: 0,
+//   delay: 3,
+// });
 
-gsap.from(".img-4", {
-  scrollTrigger: {
-    trigger: ".img-4",
-    start: "top top",
-  },
-  x: "50px",
-  duration: 0.5,
-  opacity: 0,
-  delay: 4,
-});
+// gsap.from(".img-4", {
+//   scrollTrigger: {
+//     trigger: ".img-4",
+//     start: "top top",
+//   },
+//   x: "50px",
+//   duration: 0.5,
+//   opacity: 0,
+//   delay: 4,
+// });
