@@ -42,12 +42,36 @@
   }
 }
 
+.l-chapter.l-intro {
+  height: 120vh;
+  position: relative;
+  aspect-ratio: 1 / 1.5;
+}
+
 .l-chapter-horizontal {
   width: 300%;
 }
 
 .l-first-img {
-  position: relative;
+  position: absolute;
+  width: 60%;
+  top: 7%;
+}
+
+.l-first-middle-3-img,
+.l-first-middle-img {
+  bottom: 12%;
+  width: 32%;
+  position: absolute;
+}
+
+.l-first-middle-img {
+  left: 18%;
+}
+
+.l-first-middle-3-img {
+  bottom: 10%;
+  right: 12%;
 }
 
 .l-big-img {

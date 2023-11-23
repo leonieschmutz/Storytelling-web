@@ -19,32 +19,42 @@ const slider1Button = document.querySelector("#slider-1-button");
 const slider2Button = document.querySelector("#slider-2-button");
 const slider3Button = document.querySelector("#slider-3-button");
 
-tl.to(".slider-track", {
-  scrollTrigger: {
-    trigger: ".slider-mask",
-    start: "top top",
-    end: "+=300%",
-    pin: true,
-    scrub: true,
-    // markers: true,
-    onUpdate: function (self) {
-      document.querySelector(".progress-bar").style.transform =
-        "scaleX(" + self.progress + ")";
+var headerButton = document.querySelector("#header-button");
+
+headerButton.addEventListener("click", function (e) {
+  e.preventDefault(); // Annulation de l'action par défaut
+  document.querySelector("main").classList.remove("hidden");
+  tl.to(".slider-track", {
+    scrollTrigger: {
+      trigger: ".slider-mask",
+      start: "top top",
+      end: "+=300%",
+      pin: true,
+      scrub: true,
+      // markers: true,
+      onUpdate: function (self) {
+        document.querySelector(".progress-bar").style.transform =
+          "scaleX(" + self.progress + ")";
+      },
+      onLeave: function () {
+        progressElement.classList.add("hidden");
+        slider1Button.classList.remove("hidden");
+      },
+      onEnterBack: function () {
+        progressElement.classList.remove("hidden");
+        slider1Button.classList.add("hidden");
+      },
+      onComplete: function () {
+        console.log("Scroll completed!");
+      },
     },
-    onLeave: function () {
-      progressElement.classList.add("hidden");
-      slider1Button.classList.remove("hidden");
-    },
-    onEnterBack: function () {
-      progressElement.classList.remove("hidden");
-      slider1Button.classList.add("hidden");
-    },
-    onComplete: function () {
-      console.log("Scroll completed!");
-    },
-  },
-  x: amplitudeX + "%",
-  ease: "sine.inOut",
+    x: amplitudeX + "%",
+    ease: "sine.inOut",
+  });
+  gsap.to(window, {
+    scrollTo: "#first-img",
+    duration: 1,
+  });
 });
 
 slider1Button.addEventListener("click", function (e) {
