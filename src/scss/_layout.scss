@@ -1,3 +1,23 @@
+.l-intro {
+  background: linear-gradient(180deg, #f6d8b2 34.51%, #f3e6dd 100%);
+}
+
+.l-chapter-1 {
+  background: #f3e6dd;
+}
+
+.l-chapter-2 {
+  background: linear-gradient(180deg, #f3e6dd 0%, #f6d8b2 63.11%);
+}
+
+.l-chapter-3 {
+  background: linear-gradient(180deg, #f6d8b2 0%, #f3e6dd 46.83%);
+}
+
+.l-shop {
+  background: linear-gradient(180deg, #363e68 0%, #2f3559 54.11%, #242942 100%);
+}
+
 .l-page {
   display: flex;
   flex-direction: column;
